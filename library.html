@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>My Videos — Vidsay | Your Recordings, In This Browser</title>
+<meta name="description" content="Your Vidsay recordings, saved in this browser. Play, download, import or delete them. Nothing is stored on a server.">
+<link rel="canonical" href="https://vidsay.pages.dev/library">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Vidsay">
+<meta property="og:title" content="My Videos — Vidsay">
+<meta property="og:description" content="Your Vidsay recordings, saved in this browser. Play, download, import or delete them.">
+<meta property="og:url" content="https://vidsay.pages.dev/library">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="My Videos — Vidsay">
+<meta name="twitter:description" content="Your Vidsay recordings, saved in this browser. Play, download, import or delete them.">
+<link rel="stylesheet" href="styles.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%230d9488'/><text x='50' y='68' font-size='52' text-anchor='middle' fill='white' font-family='sans-serif' font-weight='bold'>V</text></svg>">
+</head>
+<body>
+<header class="site">
+  <div class="wrap nav">
+    <a class="logo" href="index.html"><span class="mark">V</span> Vidsay</a>
+    <nav>
+      <a href="recorder.html">Recorder</a>
+      <a href="library.html">My videos</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="loom-alternative.html">Loom alternative</a>
+    </nav>
+    <div class="spacer"></div>
+    <a class="btn primary" href="recorder.html">Record free</a>
+  </div>
+</header>
+
+<main>
+<div class="rec-wrap">
+  <h1 style="font-size:30px;letter-spacing:-.5px">My videos</h1>
+  <p class="muted" style="margin:8px 0 4px">Recordings live in <b>this browser only</b> — Vidsay has no cloud storage in this version. Keep the downloaded .webm files safe: clearing browser data deletes the library.</p>
+  <p class="small muted" id="libCount">Free plan: 0 / 25 videos used</p>
+
+  <div class="alert info" id="infoBox"></div>
+  <div class="alert err" id="errBox"></div>
+
+  <div class="rec-controls">
+    <a class="btn primary" href="recorder.html">● Record a new video</a>
+    <label class="btn" for="importFile" style="cursor:pointer">⬆ Import a .webm file</label>
+    <input type="file" id="importFile" accept="video/webm,video/*" style="display:none">
+  </div>
+
+  <div class="lib-list" id="libList"></div>
+  <p class="muted center" id="emptyMsg" style="margin-top:32px;display:none">No recordings yet. <a href="recorder.html" style="color:var(--accent);font-weight:600">Record your first video →</a></p>
+</div>
+</main>
+
+<footer class="site">
+  <div class="wrap cols">
+    <div>
+      <b style="color:var(--ink)">Vidsay</b> — say it in video.<br>
+      <span class="small">Unofficial rebuild for personal use — not affiliated with Loom.</span>
+    </div>
+    <nav>
+      <a href="recorder.html">Recorder</a>
+      <a href="library.html">My videos</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="free-screen-recorder.html">Free screen recorder</a>
+      <a href="loom-alternative.html">Loom alternative</a>
+      <a href="async-video-messaging.html">Async video messaging</a>
+    </nav>
+  </div>
+</footer>
+
+<script src="js/library.js"></script>
+</body>
+</html>

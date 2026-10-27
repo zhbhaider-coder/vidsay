@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Recorder — Vidsay | Free Screen Recorder in Your Browser</title>
+<meta name="description" content="Record your screen, camera and mic right in the browser. Free, no install, no signup — your video downloads as a .webm file to your device.">
+<link rel="canonical" href="https://vidsay.pages.dev/recorder">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Vidsay">
+<meta property="og:title" content="Recorder — Vidsay">
+<meta property="og:description" content="Record your screen, camera and mic right in the browser. Free, no install, no signup.">
+<meta property="og:url" content="https://vidsay.pages.dev/recorder">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Recorder — Vidsay">
+<meta name="twitter:description" content="Record your screen, camera and mic right in the browser. Free, no install, no signup.">
+<link rel="stylesheet" href="styles.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%230d9488'/><text x='50' y='68' font-size='52' text-anchor='middle' fill='white' font-family='sans-serif' font-weight='bold'>V</text></svg>">
+</head>
+<body>
+<header class="site">
+  <div class="wrap nav">
+    <a class="logo" href="index.html"><span class="mark">V</span> Vidsay</a>
+    <nav>
+      <a href="recorder.html">Recorder</a>
+      <a href="library.html">My videos</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="loom-alternative.html">Loom alternative</a>
+    </nav>
+    <div class="spacer"></div>
+    <a class="btn primary" href="library.html">My videos</a>
+  </div>
+</header>
+
+<main>
+<div class="rec-wrap">
+  <h1 style="font-size:30px;letter-spacing:-.5px">Recorder</h1>
+  <p class="muted" style="margin:8px 0 4px" id="recIntro">Record your screen, camera and mic — right here in the browser. Your video downloads to your device; nothing is uploaded anywhere.</p>
+  <p class="small muted" id="planLine">Free plan: <b id="freeCount">0 / 25</b> videos used · recordings stop automatically at 5:00 · small “Vidsay” mark on free recordings</p>
+
+  <div class="rec-stage" style="margin-top:20px">
+    <video id="preview" autoplay muted playsinline></video>
+    <div class="placeholder" id="placeholder">Your recording preview appears here.<br>Choose what to record below, then press <b>Start recording</b>.<br><span class="small" id="phNote">On desktop: screen + camera in Chrome, Edge or Firefox. On your phone: camera recording instead.</span></div>
+    <div class="live-dot" id="liveDot"><i></i> REC</div>
+    <div class="timer" id="timer">00:00</div>
+  </div>
+
+  <div class="alert err" id="errBox"></div>
+  <div class="alert info" id="infoBox"></div>
+  <div class="alert warn" id="warnBox"></div>
+
+  <div class="rec-controls">
+    <button class="btn primary big" id="btnStart">● Start recording</button>
+    <button class="btn big" id="btnPause" disabled>⏸ Pause</button>
+    <button class="btn big" id="btnStop" disabled>■ Stop</button>
+    <button class="btn big" id="btnCamSwitch" style="display:none">🔄 Switch to rear camera</button>
+    <button class="btn big" id="btnDownload" disabled>⬇ Download .webm</button>
+    <div class="spacer"></div>
+    <a class="btn" href="library.html">My videos →</a>
+  </div>
+
+  <div class="rec-options">
+    <div class="card">
+      <h3>What to record</h3>
+      <label class="opt-row" id="optScreenCam"><input type="radio" name="src" value="screen-cam" checked> <span>Screen + camera<small>Your face in the corner, screen on show</small></span></label>
+      <label class="opt-row" id="optScreen"><input type="radio" name="src" value="screen"> <span>Screen only<small>Just your screen and voice</small></span></label>
+      <label class="opt-row"><input type="radio" name="src" value="cam"> <span>Camera only<small>Just you, talking to camera</small></span></label>
+      <p class="small muted" id="camOnlyNote" style="display:none;margin-top:8px">Screen sharing isn't available here, so Vidsay records your camera instead.</p>
+    </div>
+    <div class="card">
+      <h3>Audio</h3>
+      <label class="opt-row"><input type="checkbox" id="optMic" checked> <span>Microphone<small>Your voice, from your mic</small></span></label>
+      <label class="opt-row" id="optSysRow"><input type="checkbox" id="optSysAudio"> <span>System audio<small>Sound from the shared tab or app, if your browser allows it</small></span></label>
+    </div>
+    <div class="card">
+      <h3>After you stop</h3>
+      <p class="small muted" style="margin-top:6px">Your video is saved to <b>My videos</b> on this browser and downloads as a <code>.webm</code> file. Share the file anywhere — email, chat, docs. Vidsay has no cloud storage in this version, so keep the downloaded file safe.</p>
+    </div>
+  </div>
+
+  <p class="small muted" style="margin-top:28px">Privacy: recording happens entirely on your device. Vidsay never sees, stores or uploads your video. The browser will ask permission before sharing your screen or camera — you choose exactly what to share, and you can stop sharing at any time.</p>
+</div>
+</main>
+
+<footer class="site">
+  <div class="wrap cols">
+    <div>
+      <b style="color:var(--ink)">Vidsay</b> — say it in video.<br>
+      <span class="small">Unofficial rebuild for personal use — not affiliated with Loom.</span>
+    </div>
+    <nav>
+      <a href="recorder.html">Recorder</a>
+      <a href="library.html">My videos</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="free-screen-recorder.html">Free screen recorder</a>
+      <a href="loom-alternative.html">Loom alternative</a>
+      <a href="async-video-messaging.html">Async video messaging</a>
+    </nav>
+  </div>
+</footer>
+
+<canvas id="mix" width="1280" height="720" style="display:none"></canvas>
+<video id="screenVid" autoplay muted playsinline style="display:none"></video>
+<video id="camVid" autoplay muted playsinline style="display:none"></video>
+<script src="js/recorder.js"></script>
+</body>
+</html>

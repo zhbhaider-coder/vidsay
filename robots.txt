@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://vidsay.pages.dev/sitemap.xml

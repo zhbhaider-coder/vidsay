@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://vidsay.pages.dev/</loc><priority>1.0</priority><changefreq>weekly</changefreq></url>
+  <url><loc>https://vidsay.pages.dev/recorder</loc><priority>0.9</priority><changefreq>weekly</changefreq></url>
+  <url><loc>https://vidsay.pages.dev/pricing</loc><priority>0.9</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://vidsay.pages.dev/free-screen-recorder</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://vidsay.pages.dev/loom-alternative</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://vidsay.pages.dev/async-video-messaging</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://vidsay.pages.dev/library</loc><priority>0.6</priority><changefreq>weekly</changefreq></url>
+</urlset>
